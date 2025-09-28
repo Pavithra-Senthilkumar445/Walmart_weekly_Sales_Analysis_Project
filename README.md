@@ -1,5 +1,5 @@
-**<img width="20" height="20" alt="store (1)" src="https://github.com/user-attachments/assets/649ac920-9416-42cf-aeae-79a37fa2241a" />
-Walmart Weekly Sales Analysis**
+  **<img width="20" height="20" alt="store (1)" src="https://github.com/user-attachments/assets/649ac920-9416-42cf-aeae-79a37fa2241a" />
+    Walmart Weekly Sales Analysis**
 
  
  **<img width="20" height="20" alt="bar-chart" src="https://github.com/user-attachments/assets/0d692803-97c6-41ce-b00d-03d350f56def" />

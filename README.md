@@ -1,4 +1,5 @@
  Walmart Weekly Sales Analysis
+ 
  Project Overview
 This project analyzes Walmart weekly sales (2010–2012) using Excel for data cleaning and Power BI for dashboard creation.  
 It demonstrates the full workflow: **Data Cleaning → SQL Analysis → Power BI Visualization**.
@@ -13,10 +14,10 @@ It demonstrates the full workflow: **Data Cleaning → SQL Analysis → Power BI
 
 
  Files in this Repo
-- `Data/cleaned_sales.xlsx` — cleaned dataset for analysis  
-- `Screenshots/DashboardScreenshot1.png` — main dashboard view  
-- `Screenshots/DashboardScreenshot2.png` — insights dashboard  
-- `Screenshots/ReportSummary.png` — project summary
+- Data/cleaned_sales.csv — cleaned dataset for analysis  
+- Screenshots/DashboardScreenshot1.png — insights dashboard   
+- Screenshots/DashboardScreenshot2.png — insights dashboard  
+- Screenshots/ReportSummary.png — project summary
 
 
  Key Insights
@@ -26,5 +27,5 @@ It demonstrates the full workflow: **Data Cleaning → SQL Analysis → Power BI
 
 
 
-## 🔗 Portfolio Link
-Full project details: [My GitHub Portfolio](YOUR_GITHUB_PROFILE_LINK)
+ Portfolio Link
+Full project details: https://github.com/Pavithra-Senthilkumar445/Walmart_weekly_Sales_Analysis_Project

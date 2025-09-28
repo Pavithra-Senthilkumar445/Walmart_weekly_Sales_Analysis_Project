@@ -1,0 +1,121 @@
+--Total Stores
+SELECT 
+    COUNT(DISTINCT store) as Total_stores
+FROM
+    walmart_sales_analysis_project;
+
+--Sum of weekly sales
+SELECT 
+    SUM(weekly_sales) as Total_sales
+FROM
+    walmart_sales_analysis_project;
+
+--Average of  weekly sales 
+ SELECT 
+    AVG(weekly_sales) as Avg_sales 
+FROM
+    walmart_sales_analysis_project;
+
+--Average sales per store 
+SELECT 
+    SUM(weekly_sales) / COUNT(DISTINCT store) AS avg_sales_per_store
+FROM
+    walmart_sales_analysis_project;
+
+--Top 5  performing store 
+SELECT 
+    store AS Top_5_store , SUM(weekly_sales) AS total_sales
+FROM
+    walmart_sales_analysis_project
+GROUP BY store
+ORDER BY total_sales DESC
+LIMIT 5;
+
+--Yearly total sales 
+SELECT 
+    year, SUM(weekly_sales) AS total_sales
+FROM
+    walmart_sales_analysis_project
+GROUP BY year
+ORDER BY total_sales DESC;
+
+--Total sales by holiday type and year 
+SELECT 
+    CASE
+        WHEN holiday_flag = 1 THEN 'Holiday'
+        ELSE 'Non-Holiday'
+    END AS holiday_type,
+    year,
+    SUM(weekly_sales) AS total_sales
+FROM
+    walmart_sales_analysis_project
+GROUP BY holiday_type , year
+ORDER BY year , holiday_type;
+
+--Total sales by temperate range 
+SELECT 
+    CASE 
+        WHEN Temperature < 20 THEN 'Cold (<20°C)'
+        WHEN Temperature >= 20 AND Temperature < 40 THEN 'Cool (20-39°C)'
+        WHEN Temperature >= 40 AND Temperature < 60 THEN 'Moderate (40-59°C)'
+        WHEN Temperature >= 60 AND Temperature < 80 THEN 'Warm (60-79°C)'
+        WHEN Temperature >= 80 THEN 'Hot (80°C+)'
+        ELSE 'Unknown'
+    END AS Temperature_Range,
+    SUM(Weekly_Sales) AS Total_Sales
+FROM  walmart_sales_analysis_project
+GROUP BY Temperature_Range
+ORDER BY Temperature_Range;
+
+--total sales by year and CPI range 
+SELECT 
+    CASE
+        WHEN CPI < 150 THEN 'Very Low CPI (126–149)'
+        WHEN CPI < 170 THEN 'Low CPI (150–169)'
+        WHEN CPI < 190 THEN 'Moderate CPI (170–189)'
+        WHEN CPI < 210 THEN 'High CPI (190–209)'
+        ELSE 'Very High CPI (210+)'
+    END AS CPI_Range,
+    SUM(Weekly_Sales) AS Total_Sales,
+    Year
+FROM walmart_sales_analysis_project
+GROUP BY CPI_Range, Year
+ORDER BY Year, CPI_Range;
+
+--Total sales by Unemployment range 
+SELECT 
+    CASE
+        WHEN Unemployment <= 5 THEN 'Very Low'
+        WHEN Unemployment <= 7 THEN 'Low'
+        WHEN Unemployment <= 10 THEN 'Moderate'
+        WHEN Unemployment <= 14 THEN 'High'
+        ELSE 'Very High'
+    END AS Unemployment_Range,
+    SUM(Weekly_Sales) AS Total_Sales
+FROM walmart_sales_analysis_project
+GROUP BY Unemployment_Range
+ORDER BY Unemployment_Range;
+
+--YOY sales growth % 
+WITH Yearly_Sales AS (
+    SELECT 
+        Year,
+        SUM(Weekly_Sales) AS Total_Sales
+    FROM walmart_sales_analysis_project
+    GROUP BY Year
+)
+
+SELECT 
+    y.Year,
+    y.Total_Sales AS Current_Year_Sales,
+    prev.Total_Sales AS Last_Year_Sales,
+    CASE 
+        WHEN prev.Total_Sales IS NULL THEN NULL
+        ELSE ROUND(
+            (y.Total_Sales - prev.Total_Sales) / prev.Total_Sales * 100, 2
+        )
+    END AS YOY_Sales_Growth_Percentage
+FROM Yearly_Sales y
+LEFT JOIN Yearly_Sales prev
+    ON y.Year = prev.Year + 1
+ORDER BY y.Year;

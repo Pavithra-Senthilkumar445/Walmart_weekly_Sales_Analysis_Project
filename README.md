@@ -5,15 +5,16 @@
  **<img width="20" height="20" alt="bar-chart" src="https://github.com/user-attachments/assets/0d692803-97c6-41ce-b00d-03d350f56def" />
 Project Overview**
   
-  This project analyzes Walmart weekly sales (2010–2012) uncover trends, store performance differences, and the impact of holidays on sales. The goal is to provide data-driven insights that support strategic decisions in sales planning, and business optimization.
+This project analyzes Walmart weekly sales data (2010–2012) to uncover trends, store performance differences, and the impact of holidays on sales.
+The goal is to deliver data-driven insights that support strategic decisions in sales planning and business optimization.
 
 **<img width="20" height="20" alt="target (1)" src="https://github.com/user-attachments/assets/fd5fe703-1285-45ab-b863-71c9d6add488" />
-Business Problem**
-Walmart needed to answer:
+Business Questions**
+
 - How do sales vary across stores and yearly?
 - What impact do holidays have on sales?
 - What are the year-over-year trends in sales performance?
-- How external factors affecting sales?
+- How do external factors affecting sales?
 
   
 **<img width="20" height="20" alt="data-collection" src="https://github.com/user-attachments/assets/698e83bb-6bae-46d1-96ab-f73775c20a25" />

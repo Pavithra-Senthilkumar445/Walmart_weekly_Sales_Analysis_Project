@@ -39,16 +39,18 @@ Tools Used**
 Methodology**
  
   **Data Cleaning**
--Data Cleaning & Preparation
--Reviewed the dataset for duplicates and null values — none were found.
--Verified and updated data types where necessary.
--Derived additional columns for Year and Month Name from the Date column to support time-based analysis.
--Rounded decimal values to two decimal places to improve readability.
+  
+- Data Cleaning & Preparation.
+- Reviewed the dataset for duplicates and null values — none were found.
+- Verified and updated data types where necessary.
+- Derived additional columns for Year and Month Name from the Date column to support time-based analysis.
+- Rounded decimal values to two decimal places to improve readability.
 
   **Data Analysis**
--Calculated total sales by store, week, and holiday status.
--Compared year-over-year sales.
--Analyzed holiday impact on sales trends.
+  
+- Calculated total sales by store, week, and holiday status.
+- Compared year-over-year sales.
+- Analyzed holiday impact on sales trends.
   
 
 **<img width="20" height="20" alt="exploration" src="https://github.com/user-attachments/assets/e51e94eb-f8c3-4264-b783-0611762800d4" />

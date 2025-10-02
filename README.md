@@ -59,6 +59,3 @@ Key Insights**
 - Non-holiday weeks often had stronger sales than holidays  
 - The significance of external factors in impacting sales performance.
 
-**<img width="20" height="20" alt="link" src="https://github.com/user-attachments/assets/67e64927-4348-4c3f-bbec-24a414945967" />
-Portfolio Link**
-Full project details: https://github.com/Pavithra-Senthilkumar445/Walmart_weekly_Sales_Analysis_Project
